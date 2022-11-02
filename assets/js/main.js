@@ -8,6 +8,8 @@ let difficulty = document.getElementById('difficulty');
 
 let score = document.getElementById('score');
 
+let scoreCounter = 1;
+
 
 
 //Funzione che crea le box
@@ -86,11 +88,14 @@ playButton.addEventListener('click', function(){
                console.log(bombs.includes(clickedNum))
                console.log('boooom');
                box.classList.add('bombClick');
+               score.innerHTML = `GAME OVER/score: ${scoreCounter}`;
+               box.removeEventListener('click');
 
             }  else{
 
                   console.log(bombs.includes(clickedNum))
-                  box.classList.add('boxClick'); 
+                  box.classList.add('boxClick');
+                  score.innerHTML = `Punteggio ${scoreCounter++}`; 
 
             }
                     
