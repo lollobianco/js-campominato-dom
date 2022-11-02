@@ -6,6 +6,8 @@ let restartButton = document.getElementById('restartButton');
 
 let difficulty = document.getElementById('difficulty');
 
+let score = document.getElementById('score');
+
 
 
 //Funzione che crea le box
@@ -88,7 +90,7 @@ playButton.addEventListener('click', function(){
             }  else{
 
                   console.log(bombs.includes(clickedNum))
-                  box.classList.toggle('boxClick'); 
+                  box.classList.add('boxClick'); 
 
             }
                     
@@ -125,10 +127,11 @@ playButton.addEventListener('click', function(){
                }  else{
    
                      console.log(bombs.includes(clickedNum))
-                     box.classList.toggle('boxClick'); 
+                     box.classList.add('boxClick'); 
    
                }
-                          
+                       
+               
       
             });
       
@@ -160,7 +163,7 @@ playButton.addEventListener('click', function(){
                   }  else{
       
                         console.log(bombs.includes(clickedNum))
-                        box.classList.toggle('boxClick'); 
+                        box.classList.add('boxClick'); 
       
                   }
                           
