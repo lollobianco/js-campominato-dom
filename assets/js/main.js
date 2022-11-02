@@ -33,6 +33,35 @@ function createBox(){
 }
 
 
+//Funzione che genera le bombe
+
+function bombGenerator(){
+
+   let bombs = [];
+
+   while(bombs.length != 16){
+
+      let randomNumber = (Math.floor(Math.random() * boxContainer.children.length) + 1);
+
+      if(bombs.includes(randomNumber)){
+
+         console.log('non aggiungere');
+
+      } else{
+
+        bombs.push(`${randomNumber}`); 
+
+        console.log('ok');
+
+      }
+
+   }
+
+   return bombs;
+}
+
+
+
 //Funzione che crea le box al click del tasto play in base alla difficoltà
 
 playButton.addEventListener('click', function(){
@@ -48,12 +77,23 @@ playButton.addEventListener('click', function(){
          box.innerText = `${i}`;
    
          boxContainer.append(box);
-         
+
          box.addEventListener('click', function(){
+
+            let numberBox = this.innerText;
    
-            console.log(this.innerText);
-   
-            this.classList.toggle('boxClick');
+            console.log(numberBox);
+
+            console.log (bombs.includes(numberBox));
+
+            if (bombs.includes(numberBox) == true){
+
+               console.log('boom')
+
+            }  else{
+
+               this.classList.toggle('boxClick');
+            }
       
          });
    
@@ -64,19 +104,30 @@ playButton.addEventListener('click', function(){
          for (let i = 1; i <= 81; i++) {
 
             let box = createBox();
-      
+
             box.innerText = `${i}`;
       
             boxContainer.append(box);
-            
+
             box.addEventListener('click', function(){
+
+               let numberBox = this.innerText;
       
-               console.log(this.innerText);
-      
-               this.classList.toggle('boxClick');
+               console.log(numberBox);
+   
+               console.log (bombs.includes(numberBox));
+   
+               if (bombs.includes(numberBox) == true){
+   
+                  console.log('boom')
+   
+               }  else{
+   
+                  this.classList.toggle('boxClick');
+               }
          
             });
-      
+
          }
 
 
@@ -89,12 +140,23 @@ playButton.addEventListener('click', function(){
                box.innerText = `${i}`;
          
                boxContainer.append(box);
-               
+
                box.addEventListener('click', function(){
+
+                  let numberBox = this.innerText;
          
-                  console.log(this.innerText);
-         
-                  this.classList.toggle('boxClick');
+                  console.log(numberBox);
+      
+                  console.log (bombs.includes(numberBox));
+      
+                  if (bombs.includes(numberBox) == true){
+      
+                     console.log('boom')
+      
+                  }  else{
+      
+                     this.classList.toggle('boxClick');
+                  }
             
                });
          
@@ -103,4 +165,9 @@ playButton.addEventListener('click', function(){
          }
 
 
+   let bombs = bombGenerator();
+
+   console.log(bombs);
+
 });
+
