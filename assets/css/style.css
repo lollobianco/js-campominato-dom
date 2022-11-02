@@ -1,0 +1,150 @@
+#logo{
+   width: 80px
+}
+
+#playButton{
+   background-color: #E9E9ED;
+}
+
+#restartButton{
+   background-color: #E9E9ED;
+}
+
+#boxContainer{
+   width: 35%;
+   margin: 0 auto;
+} 
+
+main{
+   height: 80%;
+}
+
+.bgAqua{
+   background-color: #71FFD6;
+   height: 80%;
+}
+
+.box{
+   aspect-ratio: 1/1;
+   border: 1px solid black;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: crosshair;
+}
+
+.boxEasy{
+   width: calc(100%/10);
+}
+
+.boxMedium{
+   width: calc(100%/9);
+}
+
+.boxHard{
+   width: calc(100%/7);
+}
+
+.headerContainer{
+   height: 10%;
+}
+
+.footerContainer{
+   height: 10%;
+}
+
+.boxClick{
+   background-color: #8fb8de;
+}
+
+
+@media screen and (min-width: 661px){
+
+   #boxContainer{
+      width: 65%;
+      margin: 0 auto;
+   } 
+
+   #title{
+      font-size: 1.5rem;
+   }
+
+   #title{
+      display: block;
+   }
+
+   .difficulties{
+      display: block;
+   }
+
+}
+
+@media screen and (max-width: 660px){
+
+   #boxContainer{
+      width: 98%;
+      margin: 0 auto;
+   } 
+
+   #title{
+      display: none;
+   }
+
+   .difficulties{
+      display: none;
+   }
+
+}
+
+@media screen and (min-width: 992px){
+
+   #boxContainer{
+      width: 50%;
+      margin: 0 auto;
+   } 
+
+   #title{
+      display: block;
+   }
+
+   .difficulties{
+      display: block;
+   }
+
+}
+
+@media screen and (min-width: 1200px){
+
+   #boxContainer{
+      width: 40%;
+      margin: 0 auto;
+   } 
+
+   #title{
+      display: block;
+   }
+
+   .difficulties{
+      display: block;
+   }
+
+}
+
+@media screen and (min-width: 1900px){
+
+   #boxContainer{
+      width: 35%;
+      margin: 0 auto;
+   } 
+
+   #title{
+      display: block;
+   }
+
+   .difficulties{
+      display: block;
+   }
+
+}
+   
+   
