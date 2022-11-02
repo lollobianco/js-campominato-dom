@@ -39,7 +39,7 @@ function bombGenerator(){
 
    let bombs = [];
 
-   while(bombs.length != 16){
+   while(bombs.length != 17){
 
       let randomNumber = (Math.floor(Math.random() * boxContainer.children.length) + 1);
 
@@ -50,8 +50,6 @@ function bombGenerator(){
       } else{
 
         bombs.push(`${randomNumber}`); 
-
-        console.log('ok');
 
       }
 
@@ -68,14 +66,15 @@ playButton.addEventListener('click', function(){
 
    boxContainer.innerHTML = '';
 
+
    if(difficulty.value == 1){
 
       for (let i = 1; i <= 100; i++) {
 
          let box = createBox();
-   
+
          box.innerText = `${i}`;
-   
+      
          boxContainer.append(box);
 
          box.addEventListener('click', function(){
@@ -89,6 +88,7 @@ playButton.addEventListener('click', function(){
             if (bombs.includes(numberBox) == true){
 
                console.log('boom')
+               this.classList.add('bombClick');
 
             }  else{
 
@@ -120,6 +120,7 @@ playButton.addEventListener('click', function(){
                if (bombs.includes(numberBox) == true){
    
                   console.log('boom')
+                  this.classList.add('bombClick');
    
                }  else{
    
@@ -148,10 +149,13 @@ playButton.addEventListener('click', function(){
                   console.log(numberBox);
       
                   console.log (bombs.includes(numberBox));
+
+                  gameOver();
       
                   if (bombs.includes(numberBox) == true){
       
                      console.log('boom')
+                     this.classList.add('bombClick');
       
                   }  else{
       
@@ -167,7 +171,32 @@ playButton.addEventListener('click', function(){
 
    let bombs = bombGenerator();
 
-   console.log(bombs);
+   console.log(bombs)
 
 });
+
+// function gameOver(){
+
+//    let bombs = bombGenerator();
+
+//    let numberBox = this.innerText;
+
+//    console.log(bombs)
+
+//    for (let i = 1; i <= boxContainer.children.length; i++){
+
+//       if (bombs.includes(numberBox) == true){
+      
+//          console.log('boom')
+//          this.classList.add('bombClick');
+
+//       }  else{
+
+//          this.classList.toggle('boxClick');
+//       }
+
+//    }
+
+// }
+
 
